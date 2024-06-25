@@ -2,8 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import Card from './components/Card'; // Update the import path based on your file structure
-
+import Card from '../components/Card'; // Update the import path based on your file structure
 const Container = styled.div`
   padding: 20px;
   display: flex;
@@ -16,7 +15,7 @@ const Home = () => {
     <Container>
       <Card
         title="Welcome to Our Investigation Services"
-        description="At [Your Company Name], we provide comprehensive investigative services with professionalism and discretion."
+        description="we provide comprehensive investigative services with professionalism and discretion."
         imageUrl="/images/welcome.jpg" // Update with your image path
       />
       <Card
