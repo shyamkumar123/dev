@@ -62,9 +62,9 @@ const Home = () => {
     <Container>
       <Section>
       <Image src="/images/welcome.jpg" alt="Welcome" />
-        <Subtitle>Leading the Way in Investigative Services</Subtitle>
+        <Subtitle>{homeContent.title}</Subtitle>
         <Content>
-          we are dedicated to providing comprehensive investigative services with the utmost professionalism and discretion. Our team of experienced investigators utilizes the latest techniques and technologies to uncover the truth and deliver actionable insights.
+        {homeContent.content}
         </Content>
        
       </Section>
