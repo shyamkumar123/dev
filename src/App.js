@@ -8,7 +8,9 @@ import Team from './components/Team';
 import Contact from './components/Contact';
 import PhotoUpload from './components/PhotoUpload';
 import styled from 'styled-components';
-
+import PrivateRoute from './components/PrivateRoute'; // Define a PrivateRoute component to protect routes
+import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboardPage from './pages/AdminDashboardPage';
 const AppContainer = styled.div`
   text-align: center;
 `;
@@ -25,6 +27,8 @@ function App() {
       <AppContainer>
         <NavBar />
         <Routes>
+        <Route exact path="/pages/login" component={AdminLoginPage} />
+        <PrivateRoute path="/pages/dashboard" component={AdminDashboardPage} />
           <Route path="/" element={<Home />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/gallery" element={
