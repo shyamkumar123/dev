@@ -63,6 +63,7 @@ const Home = () => {
       <Section>
       <Image src="/images/welcome.jpg" alt="Welcome" />
         <Title>{homeContent.title}</Title>
+        <Subtitle></Subtitle>
         <Content>
         {homeContent.content}
         </Content>
