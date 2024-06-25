@@ -8,6 +8,8 @@ import Team from './components/Team';
 import Contact from './components/Contact';
 import PhotoUpload from './components/PhotoUpload';
 import styled from 'styled-components';
+import Card from './components/Card';
+
 
 const AppContainer = styled.div`
   text-align: center;
