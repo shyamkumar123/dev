@@ -1,7 +1,7 @@
 // /src/pages/.js
 
 import React from 'react';
-import LoginForm from '../components/Admin/LoginForm';
+import LoginForm from './components/Admin/LoginForm';
 
 const AdminLoginPage = () => {
   return (
