@@ -11,7 +11,6 @@ import PrivateRoute from './components/PrivateRoute'; // Define a PrivateRoute c
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import NavBar from './components/NavBar';
 import AlertMessage from './components/AlertMessage';
-import LoginPage from './components/Admin/LoginForm';
 const AppContainer = styled.div`
   text-align: center;
 `;
@@ -50,7 +49,7 @@ function App(){
     <Router>
           <NavBar/>
     <Routes>
-      <Route path="/admin/login" element={<LoginPage showAlert={showAlert} />} />
+      <Route path="/admin/login" element={<AdminLoginPage showAlert={showAlert} />} />
       <Route path="/admin/dashboard" element={<PrivateRoute element={AdminDashboardPage} />} />
       <Route path="/" element={<Home />} />
           <Route path="/cases" element={<Cases />} />
