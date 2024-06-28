@@ -11,7 +11,7 @@ import PrivateRoute from './components/PrivateRoute'; // Define a PrivateRoute c
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import NavBar from './components/NavBar';
 import AlertMessage from './components/AlertMessage';
-import LoginPage from './components/Admin/LoginForm';
+import LoginPage from '../components/Admin/LoginForm';
 const AppContainer = styled.div`
   text-align: center;
 `;
