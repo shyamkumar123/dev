@@ -1,43 +1,42 @@
+// /src/components/NavBar.js
+
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-
-const Nav = styled.nav`
-  background-color: #333;
-  padding: 10px;
-`;
-
-const Ul = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-`;
-
-const Li = styled.li`
-  margin: 0 10px;
-`;
-
-const StyledLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+import { Link, useNavigate } from 'react-router-dom';
+import { AppBar, Toolbar, Button, Box } from '@mui/material';
+import AuthService from '../services/AuthService';
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const isLoggedIn = AuthService.isLoggedIn();
+
+  const handleLogout = () => {
+    AuthService.logout();
+    navigate('/admin/login');
+  };
+
   return (
-    <Nav>
-      <Ul>
-        <Li><StyledLink to="/">Home</StyledLink></Li>
-        <Li><StyledLink to="/cases">Cases</StyledLink></Li>
-        <Li><StyledLink to="/gallery">Gallery</StyledLink></Li>
-        <Li><StyledLink to="/team">Team</StyledLink></Li>
-        <Li><StyledLink to="/contact">Contact</StyledLink></Li>
-      </Ul>
-    </Nav>
+    <AppBar position="static">
+      <Toolbar>
+        <Box display="flex" justifyContent="space-between" width="100%">
+          <Button align="left" color="inherit" component={Link} to={isLoggedIn ? "/home" : "/admin/login"}>
+            {isLoggedIn ? "" : "Login"}
+          </Button>
+          <Box display="flex">
+          <Button color="inherit" component={Link} to="/">Home</Button>
+         
+            <Button color="inherit" component={Link} to="/contact">Contact</Button>
+            {isLoggedIn && (
+              <>
+                 <Button color="inherit" component={Link} to="/team">Team</Button>
+                 <Button color="inherit" component={Link} to="/cases">Cases</Button>
+                <Button color="inherit" component={Link} to="/gallery">Gallery</Button>
+                <Button color="inherit" onClick={handleLogout}>Logout</Button>
+              </>
+            )}
+          </Box>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 
